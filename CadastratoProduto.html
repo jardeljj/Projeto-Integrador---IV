@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Assets/css/Style.css">
+    <title>Cadastro de Produto</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">SportsTech</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Novo Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Alterar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inativar e Reativar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Detalhes dos Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pagina principal</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Produto:</h1>
+
+            <form action="ProdutoEditar" method="POST">
+                <input type="hidden" value="${produto.codigo}" id="codigo" name="codigo">
+                <div class="form-group">
+                    <label for="nome-do-produto">Nome do Produto</label>
+                    <input type="text" class="form-control" id="Nome do produto" value="" name="Nome do produto">
+                </div>
+                <div class="form-group">
+                    <label for="nome-por-extenso">Nome por Extenso</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-row col-2">
+                    <label for="Quantidade-estrelas">Qdt Estrelas</label>
+                    <input type="text" class="form-control" id="Qdt-estrelas" value="" name="Qdt Estrelas">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Status">Status</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Ativo</option>
+                            <option>Desativo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label for="preco">Preço</label>
+                        <input type="number" class="form-control" id="preco" value="${produto.preco}" name="preco">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="Quantidade-Estoque">Qtd Estoque</label>
+                        <input type="text" class="form-control" id="Qdt-estoque" value="${produto.unidade}"
+                            name="Qdt Estoque">
+                    </div>
+                </div>
+                <div id="uparquivo" class="form-group">
+                    <div id="uparquivo" class="form-group">
+                        <label for="exampleFormControlFile1">Caminho do arquivo upload</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+                </div>
+                <div class="images-produtos">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <input type="checkbox">
+                                </th>
+                                <th><input type="checkbox"></th>
+                                <th><input type="checkbox"></th>
+                                <th><input type="checkbox"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="box">
+
+                                        <img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <span> Imagem 1 </span>
+                                    </div>
+                                    </th>
+                                <td>
+                                    <div class="box">
+
+                                        <img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <span> Imagem 2 </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="box">
+
+                                        <img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+
+                                        <span> Imagem 3 </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="box">
+
+                                        <img
+                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+
+                                        <span> Imagem 4 </span>
+                                    </div>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary col-2">OK</button>
+                <a href="ProdutoListar" class="btn btn-light col-1">Cancel</a>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
