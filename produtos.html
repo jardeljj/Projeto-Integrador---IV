@@ -20,53 +20,65 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">SportsTech</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Novo Produto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Alterar Produto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Inativar e Reativar Produto</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Detalhes dos Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pagina principal</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav px-3">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sair</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">SportsTech</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="CadastratoProduto.html">Novo Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Alterar_Produto.html">Alterar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="InativaeAtiva.html">Inativar e Reativar Produto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Produtos.html">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Detalhes dos Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Pagina principal</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav px-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sair</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <main role="main">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h1>Produtos</h1>
                 </div>
+                
                 <div class="col">
-                    <a href="ProdutoEditar" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Incluir novo</a>
+                    <a href="CadastratoProduto.html" class="btn btn-outline-secondary"><i class="fas fa-plus"></i> Incluir novo</a>
                 </div>
             </div>
+            <br>
+            <div class="form-group row">
+                <label for="pesquisar" class="col-sm-1 col-form-label">Procurar: </label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="pesquisar" placeholder="Digite oque está procurando...">
+                </div>
+                <a href="Codigo para pesquisar" class="btn btn-primary"><i class="fas fa-search"></i></a>
+            </div>
+            <br>
             <div class="row">
                 <div class="col">
                      <table class="table table-hover">
