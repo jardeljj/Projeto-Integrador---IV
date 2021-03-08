@@ -64,73 +64,40 @@
     </header>
     <main>
         <div class="container">
-            <h1>Cadastro de Produtos</h1>
-            <br>
-            <form action="ProdutoEditar" method="POST" id = "register-form">
+            <h1>Produto:</h1>
+
+            <form action="ProdutoEditar" method="POST">
                 <input type="hidden" value="${produto.codigo}" id="codigo" name="codigo">
                 <div class="form-group">
                     <label for="nome-do-produto">Nome do Produto</label>
-                    <input type="text" class="form-control" id="Nome do produto" value="" name="Nome do produto" data-min-length="3" data-max-length="30">
+                    <input type="text" class="form-control" id="Nome do produto" value="" name="Nome do produto">
                 </div>
                 <div class="form-group">
-                    <label for="nome-por-extenso">Marca</label>
-                    <input type="text" class="form-control" id="Nome do produto" value="" name="Nome do produto" data-min-length="3" data-max-length="30">
-
+                    <label for="nome-por-extenso">Nome por Extenso</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-row col-2">
+                    <label for="Quantidade-estrelas">Qdt Estrelas</label>
+                    <input type="text" class="form-control" id="Qdt-estrelas" value="" name="Qdt Estrelas">
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="Status">Tamanho</label>
+                        <label for="Status">Status</label>
                         <select class="form-control" id="exampleFormControlSelect1">
-                            <option></option>
-                            <option>30</option>
-                            <option>31</option>
-                            <option>32</option>
-                            <option>33</option>
-                            <option>34</option>
-                            <option>35</option>
-                            <option>36</option>
-                            <option>37</option>
-                            <option>38</option>
-                            <option>39</option>
-                            <option>40</option>
-                            <option>41</option>
-                            <option>42</option>
-                            <option>43</option>
-                            <option>44</option>
-                            <option>45</option>
-                            <option>46</option>
-                            <option></option>
-                            <option>P</option>
-                            <option>M</option>
-                            <option>G</option>
-                            <option>GG</option>
-
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="Status">Cor</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
-                            <option></option>
-                            <option>Branco</option>
-                            <option>Preto</option>
-                            <option>Azul</option>
-                            <option>Vermelho</option>
-                            <option>Verde</option>
-                            <option>Rosa</option>
+                            <option>Ativo</option>
+                            <option>Desativo</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="preco">Preço</label>
-                        <input type="number" class="form-control" id="preco" value="${produto.preco}" name="preco" data-min-length = "1" data-max-length = "7">
+                        <input type="number" class="form-control" id="preco" value="${produto.preco}" name="preco">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="Quantidade-Estoque">Quantidade de Produto</label>
-                        <input type="text" class="form-control" id="Qdt-estoque" value=""
-                            name="Qdt Estoque" data-min-length = "1" data-max-length="10">
+                        <label for="Quantidade-Estoque">Qtd Estoque</label>
+                        <input type="text" class="form-control" id="Qdt-estoque" value="${produto.unidade}"
+                            name="Qdt Estoque">
                     </div>
                 </div>
                 <div id="uparquivo" class="form-group">
@@ -189,14 +156,11 @@
                     </table>
                 </div>
                 <br>
-                <button type="submit" id ="btn-submit" class="btn btn-primary col-2">OK</button>
+                <button type="submit" class="btn btn-primary col-2">OK</button>
                 <a href="ProdutoListar" class="btn btn-light col-1">Cancel</a>
             </form>
         </div>
     </main>
-    <p class="error-validation template">
-    <script src="Assets/Js/Script.js"></script>
-
 </body>
 
 </html>
