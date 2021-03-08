@@ -26,7 +26,6 @@ class Validator {
       let inputs = form.getElementsByTagName('input');
       // transformar HTMLCollection em arr
       let inputsArray = [...inputs];
-
       // loop nos inputs e validação mediante aos atributos encontrados
       inputsArray.forEach(function(input, obj) {
   
@@ -52,7 +51,8 @@ class Validator {
   
     // método para validar se tem um mínimo de caracteres
     minlength(input, minValue) {
-  
+      
+
       let inputLength = input.value.length;
   
       let errorMessage = `O campo precisa ter pelo menos ${minValue} caracteres`;
@@ -191,7 +191,6 @@ class Validator {
   // evento de envio do form, que valida os inputs
   submit.addEventListener('click', function(e) {
     e.preventDefault();
-    
 
     validator.validate(form);
   });
