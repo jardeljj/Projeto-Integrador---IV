@@ -66,21 +66,25 @@
         <div class="container">
             <h1>Cadastro de Produtos</h1>
             <br>
-            <form action="ProdutoEditar" method="POST" id = "register-form">
+            <form action="ProdutoEditar" method="POST" id="register-form">
                 <input type="hidden" value="${produto.codigo}" id="codigo" name="codigo">
-                <div class="form-group">
-                    <label for="nome-do-produto">Nome do Produto</label>
-                    <input type="text" class="form-control" id="Nome do produto" value="" name="Nome do produto" data-min-length="3" data-max-length="30">
-                </div>
-                <div class="form-group">
-                    <label for="nome-por-extenso">Marca</label>
-                    <input type="text" class="form-control" id="Marca" value="" name="Nome do produto" data-min-length="3" data-max-length="30">
-
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="nome-do-produto">Nome do Produto:</label>
+                        <input type="text" class="form-control" id="Nome do produto"
+                            placeholder="Insira o nome do produto" value="" name="Nome do produto" data-min-length="3"
+                            data-max-length="30">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="marca">Marca:</label>
+                        <input type="text" class="form-control" id="Marca" placeholder="Insira a marca" value=""
+                            name="Marca do produto" data-min-length="3" data-max-length="30">
+                    </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-1">
                         <label for="Status">Tamanho</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                        <select class="form-control" aria-placeholder="0" id="exampleFormControlSelect1">
                             <option></option>
                             <option>30</option>
                             <option>31</option>
@@ -104,14 +108,13 @@
                             <option>M</option>
                             <option>G</option>
                             <option>GG</option>
-
                         </select>
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="Status">Cor</label>
-                        <select class="form-control" id="exampleFormControlSelect1">
+                    <div class="form-group col-2">
+                        <label for="Status">Cor:</label>
+                        <select class="form-control" id="exampleFormControlSelect1" aria-placeholder="Azul">
                             <option></option>
                             <option>Branco</option>
                             <option>Preto</option>
@@ -122,38 +125,38 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="preco">Preço</label>
-                        <input type="number" class="form-control" id="preco" value="${produto.preco}" name="preco" data-min-length = "1" data-max-length = "7">
+                        <label for="preco">Preço:</label>
+                        <input type="number" class="form-control" id="preco" value="${produto.preco}" name="preco"
+                            data-min-length="1" data-max-length="7" placeholder="$0.00">
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="Quantidade-Estoque">Quantidade de Produto</label>
-                        <input type="text" class="form-control" id="Qdt-estoque" value=""
-                            name="Qdt Estoque" data-min-length = "1" data-max-length="10">
+                        <label for="Quantidade-Estoque">Quantidade de Produto:</label>
+                        <input type="text" class="form-control" id="Qdt-estoque" value="" name="Qdt Estoque"
+                            data-min-length="1" data-max-length="10" placeholder="0">
                     </div>
                 </div>
-                
-                <div class="form-group">
-                    <label for="avaliacao">Avaliação</label>
-                    <input type="text" class="form-control" id="avaliacao" value="" name="avaliacao" data-min-length="3" data-max-length="30">
-
+                <div class="form-group row ">
+                    <label for="avaliacao" class="col-1 col-form-label">Avaliação:</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="avaliacao" value="" name="avaliacao"
+                            data-min-length="3" data-max-length="30">
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="nome-por-extenso">Descrição do Produto</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="form-row">
+                    <label for="nome-por-extenso">Descrição do Produto:</label>
+                    <textarea class="form-control" placeholder="Descreva o produto" id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
                 </div>
-
                 <div id="uparquivo" class="form-group">
                     <div id="uparquivo" class="form-group">
-                        <label for="exampleFormControlFile1">Caminho do arquivo upload</label>
+                        <label for="exampleFormControlFile1">Caminho do arquivo upload:</label>
                         <input type="file" class="form-control-file" id="exampleFormControlFile1">
                     </div>
                 </div>
                 <div class="images-produtos">
-                    <table id="tabela"class="table">
+                    <table id="tabela" class="table">
                         <thead>
                             <tr>
                                 <th><input type="checkbox"></th>
@@ -167,24 +170,24 @@
                                 <td>
                                     <div class="box">
 
-                                        <img
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII="
+                                            alt="imagem do produto" />
                                         <span> Imagem 1 </span>
                                     </div>
                                     </th>
                                 <td>
                                     <div class="box">
 
-                                        <img
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII="
+                                            alt="imagem do produto" />
                                         <span> Imagem 2 </span>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="box">
 
-                                        <img
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII="
+                                            alt="imagem do produto" />
 
                                         <span> Imagem 3 </span>
                                     </div>
@@ -192,8 +195,8 @@
                                 <td>
                                     <div class="box">
 
-                                        <img
-                                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII=" alt="imagem do produto" />
+                                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAIVBMVEXp7vG6vsHS1tnAxcfd4uXGys3V2dzL0NO9wcTJzdDj6OsC6wUeAAABB0lEQVR4nO3Y2w6CMBCEYba2or7/AwuChwrSNWH2gvzfFYmNM7Hthth1AAAAAAAAAADA72xevSS/d+ebFUWBP/LN8v75wwZcnEuvZmn/Asns5F966ALDQ+P7tQUcx1xaoMzHfCtBWuB5z7bOQ0gBqz7M1cUPKVDNhFyPnvAzkL+Gn7RAXt6C/D1+tdcwlx/57waxk/Cd/2oQWuAz/9kgskCdPzeIKJDW86cGAQXKdAyX+Y8G+gLzRVjLH6PlBaZhVFbzIwqU1eC4Atv5+gKNfHmBVr68QCufAscvkFpCRnF76REL3Mb99TFJgfYI+iTIn95GnQT/T4ycO5AUvz8AAAAAAAAAADJ31dIGO67S1s0AAAAASUVORK5CYII="
+                                            alt="imagem do produto" />
 
                                         <span> Imagem 4 </span>
                                     </div>
@@ -202,13 +205,13 @@
                     </table>
                 </div>
                 <br>
-                <button type="submit" id ="btn-submit" class="btn btn-primary col-2">OK</button>
-                <a href="ProdutoListar" class="btn btn-light col-1">Cancel</a>
+                <button type="submit" id="btn-submit" class="btn btn-primary col-2">OK</button>
+                <a href="ProdutoListar"><button type="button" class="btn btn-danger col-2">Cancelar</button></a>
             </form>
         </div>
     </main>
     <p class="error-validation template">
-    <script src="Assets/Js/Script.js"></script>
+        <script src="Assets/Js/Script.js"></script>
 
 </body>
 
