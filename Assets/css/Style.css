@@ -21,3 +21,7 @@ body {
 .images-produtos{
   text-align: center;
 }
+
+.Arrow{
+  display: flex;
+}
